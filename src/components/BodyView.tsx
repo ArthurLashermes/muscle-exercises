@@ -68,7 +68,7 @@ const BodyView: React.FC = () => {
     <div className="body-container">
       <div className="body-view">
         <div className="svg-container">
-          <svg ref={svgRef} viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+          <svg ref={svgRef} viewBox="0 0 2346 2286" xmlns="http://www.w3.org/2000/svg">
             {/* Le contenu du SVG sera chargé dynamiquement */}
           </svg>
         </div>
@@ -76,7 +76,10 @@ const BodyView: React.FC = () => {
         {showPopup && selectedMuscle && (
           <div className="exercises-popup">
             <div className="popup-header">
-              <h2>Exercices pour {selectedMuscle}</h2>
+              <div className="popup-header-content">
+                <img src="/logo.png" alt="Logo" className="popup-logo" />
+                <h2>Exercices pour {selectedMuscle}</h2>
+              </div>
               <button className="close-button" onClick={handleClosePopup}>×</button>
             </div>
             <div className="popup-content">
