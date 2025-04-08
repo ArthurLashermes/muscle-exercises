@@ -1,0 +1,114 @@
+.body-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.body-view {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.svg-container {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+}
+
+.body-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Styles pour les zones cliquables dans le SVG */
+.muscle {
+  fill: #e0e0e0;
+  stroke: #999;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.muscle:hover {
+  fill: #ffd700;
+  stroke: #ff9900;
+  stroke-width: 3;
+  filter: brightness(1.1);
+}
+
+.muscle.selected {
+  fill: #ffd700;
+  stroke: #ff9900;
+  stroke-width: 3;
+  filter: brightness(1.2);
+}
+
+/* Style pour tous les éléments à l'intérieur d'un groupe muscle */
+.muscle * {
+  transition: all 0.3s ease;
+}
+
+.muscle:hover * {
+  fill: #ffd700;
+  stroke: #ff9900;
+  stroke-width: 3;
+}
+
+.muscle.selected * {
+  fill: #ffd700;
+  stroke: #ff9900;
+  stroke-width: 3;
+}
+
+.exercises-panel {
+  flex: 1;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.exercises-panel h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.exercises-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.exercises-panel li {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.exercises-panel h3 {
+  margin: 0 0 0.5rem 0;
+  color: #444;
+}
+
+.exercises-panel p {
+  margin: 0 0 0.5rem 0;
+  color: #666;
+}
+
+.difficulty {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.equipment {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+} 

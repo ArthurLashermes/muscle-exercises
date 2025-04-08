@@ -1,0 +1,58 @@
+{
+  "muscles": [
+    {
+      "id": "pectoralis",
+      "name": "Grand Pectoral",
+      "exercises": [
+        {
+          "name": "Développé Couché",
+          "description": "Allongé sur un banc, soulevez la barre ou les haltères en contrôlant le mouvement",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "name": "Écartés avec Haltères",
+          "description": "Allongé sur un banc, écartez les bras avec des haltères en gardant une légère flexion des coudes",
+          "sets": 3,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "id": "quadriceps",
+      "name": "Quadriceps",
+      "exercises": [
+        {
+          "name": "Squat",
+          "description": "Position debout, descendez en fléchissant les genoux tout en gardant le dos droit",
+          "sets": 4,
+          "reps": 10
+        },
+        {
+          "name": "Presse à Cuisses",
+          "description": "Assis sur la machine, poussez la charge en extension des jambes",
+          "sets": 3,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "id": "biceps",
+      "name": "Biceps",
+      "exercises": [
+        {
+          "name": "Curl Biceps",
+          "description": "Debout, soulevez les haltères en fléchissant les coudes",
+          "sets": 3,
+          "reps": 12
+        },
+        {
+          "name": "Curl Marteau",
+          "description": "Même mouvement que le curl classique mais avec les paumes face à face",
+          "sets": 3,
+          "reps": 12
+        }
+      ]
+    }
+  ]
+} 
