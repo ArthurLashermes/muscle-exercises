@@ -4,6 +4,7 @@ import './BodyView.css';
 
 const BodyView: React.FC = () => {
   const [selectedMuscle, setSelectedMuscle] = useState<string | null>(null);
+  const [showPopup, setShowPopup] = useState(false);
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const BodyView: React.FC = () => {
 
   const handleMuscleClick = (muscleId: string) => {
     setSelectedMuscle(muscleId === selectedMuscle ? null : muscleId);
+    setShowPopup(true);
     
     // Mettre à jour les classes CSS pour le style de sélection
     if (svgRef.current) {
@@ -41,6 +43,19 @@ const BodyView: React.FC = () => {
         } else {
           muscle.classList.remove('selected');
         }
+      });
+    }
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    setSelectedMuscle(null);
+    
+    // Réinitialiser les classes CSS
+    if (svgRef.current) {
+      const allMuscles = svgRef.current.querySelectorAll('.muscle');
+      allMuscles.forEach(muscle => {
+        muscle.classList.remove('selected');
       });
     }
   };
@@ -58,27 +73,30 @@ const BodyView: React.FC = () => {
           </svg>
         </div>
 
-        <div className="exercises-panel">
-          <h2>Exercices {selectedMuscle ? `pour ${selectedMuscle}` : ''}</h2>
-          {selectedMuscle ? (
-            <ul>
-              {filteredExercises.map((exercise: Exercise) => (
-                <li key={exercise.id}>
-                  <h3>{exercise.name}</h3>
-                  <p>{exercise.description}</p>
-                  <span className="difficulty">{exercise.difficulty}</span>
-                  {exercise.equipment && (
-                    <div className="equipment">
-                      <strong>Équipement :</strong> {exercise.equipment}
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Sélectionnez un muscle pour voir les exercices associés</p>
-          )}
-        </div>
+        {showPopup && selectedMuscle && (
+          <div className="exercises-popup">
+            <div className="popup-header">
+              <h2>Exercices pour {selectedMuscle}</h2>
+              <button className="close-button" onClick={handleClosePopup}>×</button>
+            </div>
+            <div className="popup-content">
+              <ul>
+                {filteredExercises.map((exercise: Exercise) => (
+                  <li key={exercise.id}>
+                    <h3>{exercise.name}</h3>
+                    <p>{exercise.description}</p>
+                    <span className="difficulty">{exercise.difficulty}</span>
+                    {exercise.equipment && (
+                      <div className="equipment">
+                        <strong>Équipement :</strong> {exercise.equipment}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
