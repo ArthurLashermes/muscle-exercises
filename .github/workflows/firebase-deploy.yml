@@ -28,10 +28,11 @@ jobs:
         run: |
           npm run build
 
-      - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Set up Firebase CLI
+        uses: wzieba/Firebase-CLI-action@v2
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
-          channelId: live
-          projectId: muscle-exercises
+          firebase_token: ${{ secrets.FIREBASE_AUTH_TOKEN }}
+
+      - name: Deploy to Firebase Hosting
+        run: |
+          firebase deploy --only hosting --token ${{ secrets.FIREBASE_AUTH_TOKEN }}
