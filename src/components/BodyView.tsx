@@ -27,7 +27,6 @@ const BodyView: React.FC = () => {
   const [isEditingWorkoutName, setIsEditingWorkoutName] = useState(false);
   const workoutNameInputRef = useRef<HTMLInputElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
-  const workoutRef = useRef<HTMLDivElement>(null);
   const pdfRef = useRef<HTMLDivElement>(null);
 
   const handleMuscleClick = useCallback((muscleId: string) => {
