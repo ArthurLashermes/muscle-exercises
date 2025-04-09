@@ -395,4 +395,366 @@ body {
   z-index: 1000;
   padding: 20px;
   overflow-y: auto;
+}
+
+/* Styles pour le nom de l'entraînement */
+.workout-name-container {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.workout-name-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.workout-name-display h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.edit-name-button {
+  background: none;
+  border: none;
+  color: #3498db;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: color 0.2s;
+}
+
+.edit-name-button:hover {
+  color: #2980b9;
+}
+
+.workout-name-form {
+  display: flex;
+  width: 100%;
+}
+
+.workout-name-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #3498db;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.workout-name-input:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+/* Styles pour la liste d'entraînement */
+.workout-list {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.workout-item {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #444;
+}
+
+.workout-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.workout-item-header h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.workout-item-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-button, .remove-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: color 0.2s;
+}
+
+.edit-button {
+  color: #3498db;
+}
+
+.edit-button:hover {
+  color: #2980b9;
+}
+
+.remove-button {
+  color: #ff5555;
+}
+
+.remove-button:hover {
+  color: #ff0000;
+}
+
+.workout-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #b0b0b0;
+}
+
+.empty-workout {
+  color: #808080;
+  font-style: italic;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Styles pour le formulaire d'exercice */
+.exercise-form {
+  padding: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #d0d0d0;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.selected-exercise {
+  background-color: #2a2a2a;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-button, .add-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.cancel-button {
+  background-color: #444;
+  color: #ffffff;
+}
+
+.cancel-button:hover {
+  background-color: #555;
+}
+
+.add-button {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}
+
+/* Règles responsives pour les nouveaux éléments */
+@media (max-width: 768px) {
+  .workout-details {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cancel-button, .add-button {
+    width: 100%;
+  }
+}
+
+/* Styles pour les actions de la liste d'entraînement */
+.workout-actions {
+  position: relative;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+/* Styles pour le bouton de génération de PDF */
+.generate-pdf-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.generate-pdf-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.generate-pdf-button:disabled {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Styles pour le PDF */
+.pdf-container {
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  display: none; /* Caché par défaut */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* Placé derrière les autres éléments */
+}
+
+.pdf-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 15px;
+}
+
+.pdf-header h1 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.pdf-date {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin: 0;
+}
+
+.pdf-workout-list {
+  margin-bottom: 30px;
+}
+
+.pdf-workout-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.pdf-workout-item h3 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.pdf-workout-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.pdf-workout-details p {
+  margin: 0;
+  font-size: 14px;
+  flex: 1;
+  min-width: 120px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.pdf-exercise-description {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.pdf-equipment {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0 0 0;
+}
+
+.pdf-empty-workout {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 20px;
+}
+
+.pdf-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  color: #7f8c8d;
+  font-size: 12px;
 } 

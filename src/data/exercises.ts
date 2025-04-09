@@ -5,6 +5,9 @@ export interface Exercise {
   difficulty: 'Débutant' | 'Intermédiaire' | 'Avancé';
   equipment?: string;
   description: string;
+  sets?: number;
+  reps?: number;
+  restTime?: number;
 }
 
 export const exercises: Exercise[] = [
@@ -15,7 +18,10 @@ export const exercises: Exercise[] = [
     muscle: 'pecs',
     difficulty: 'Intermédiaire',
     equipment: 'Barre et banc',
-    description: 'Exercice de base pour développer la poitrine en position couchée sur un banc.'
+    description: 'Exercice de base pour développer la poitrine en position couchée sur un banc.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '2',
@@ -23,7 +29,10 @@ export const exercises: Exercise[] = [
     muscle: 'pecs',
     difficulty: 'Débutant',
     equipment: 'Haltères et banc',
-    description: 'Mouvement d\'ouverture des bras pour cibler les fibres externes des pectoraux.'
+    description: 'Mouvement d\'ouverture des bras pour cibler les fibres externes des pectoraux.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '3',
@@ -31,7 +40,10 @@ export const exercises: Exercise[] = [
     muscle: 'pecs',
     difficulty: 'Débutant',
     equipment: 'Aucun',
-    description: 'Exercice au poids du corps pour renforcer la poitrine et les triceps.'
+    description: 'Exercice au poids du corps pour renforcer la poitrine et les triceps.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '4',
@@ -39,7 +51,10 @@ export const exercises: Exercise[] = [
     muscle: 'pecs',
     difficulty: 'Intermédiaire',
     equipment: 'Barre et banc incliné',
-    description: 'Variante du développé couché qui cible davantage la partie supérieure des pectoraux.'
+    description: 'Variante du développé couché qui cible davantage la partie supérieure des pectoraux.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Quadriceps
@@ -49,7 +64,10 @@ export const exercises: Exercise[] = [
     muscle: 'quadriceps',
     difficulty: 'Intermédiaire',
     equipment: 'Barre',
-    description: 'Exercice fondamental pour les jambes, sollicitant principalement les quadriceps.'
+    description: 'Exercice fondamental pour les jambes, sollicitant principalement les quadriceps.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '6',
@@ -57,7 +75,10 @@ export const exercises: Exercise[] = [
     muscle: 'quadriceps',
     difficulty: 'Débutant',
     equipment: 'Machine à extensions',
-    description: 'Exercice d\'isolation pour les quadriceps sur machine.'
+    description: 'Exercice d\'isolation pour les quadriceps sur machine.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '7',
@@ -65,7 +86,10 @@ export const exercises: Exercise[] = [
     muscle: 'quadriceps',
     difficulty: 'Débutant',
     equipment: 'Machine à presse',
-    description: 'Exercice sur machine pour développer la force des quadriceps.'
+    description: 'Exercice sur machine pour développer la force des quadriceps.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '8',
@@ -73,7 +97,10 @@ export const exercises: Exercise[] = [
     muscle: 'quadriceps',
     difficulty: 'Intermédiaire',
     equipment: 'Haltères ou barre',
-    description: 'Exercice unilatéral qui renforce les quadriceps et améliore l\'équilibre.'
+    description: 'Exercice unilatéral qui renforce les quadriceps et améliore l\'équilibre.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Ischio-jambiers
@@ -83,7 +110,10 @@ export const exercises: Exercise[] = [
     muscle: 'ischios',
     difficulty: 'Débutant',
     equipment: 'Machine à ischio',
-    description: 'Exercice d\'isolation pour les ischio-jambiers en position couchée.'
+    description: 'Exercice d\'isolation pour les ischio-jambiers en position couchée.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '10',
@@ -91,7 +121,10 @@ export const exercises: Exercise[] = [
     muscle: 'ischios',
     difficulty: 'Intermédiaire',
     equipment: 'Barre',
-    description: 'Exercice pour renforcer les ischio-jambiers et le bas du dos.'
+    description: 'Exercice pour renforcer les ischio-jambiers et le bas du dos.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '11',
@@ -99,7 +132,10 @@ export const exercises: Exercise[] = [
     muscle: 'ischios',
     difficulty: 'Avancé',
     equipment: 'Barre',
-    description: 'Variante du soulevé de terre qui cible davantage les ischio-jambiers.'
+    description: 'Variante du soulevé de terre qui cible davantage les ischio-jambiers.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '12',
@@ -107,7 +143,10 @@ export const exercises: Exercise[] = [
     muscle: 'ischios',
     difficulty: 'Débutant',
     equipment: 'Machine ou bande élastique',
-    description: 'Exercice d\'isolation pour les ischio-jambiers en position debout.'
+    description: 'Exercice d\'isolation pour les ischio-jambiers en position debout.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Mollets
@@ -117,7 +156,10 @@ export const exercises: Exercise[] = [
     muscle: 'mollets',
     difficulty: 'Débutant',
     equipment: 'Machine à mollets',
-    description: 'Exercice pour développer les mollets en position debout.'
+    description: 'Exercice pour développer les mollets en position debout.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '14',
@@ -125,7 +167,10 @@ export const exercises: Exercise[] = [
     muscle: 'mollets',
     difficulty: 'Débutant',
     equipment: 'Machine à mollets assis',
-    description: 'Exercice pour cibler les mollets en position assise.'
+    description: 'Exercice pour cibler les mollets en position assise.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '15',
@@ -133,7 +178,10 @@ export const exercises: Exercise[] = [
     muscle: 'mollets',
     difficulty: 'Débutant',
     equipment: 'Machine à presse',
-    description: 'Exercice pour les mollets utilisant la machine à presse.'
+    description: 'Exercice pour les mollets utilisant la machine à presse.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Adducteurs
@@ -143,7 +191,10 @@ export const exercises: Exercise[] = [
     muscle: 'adducteurs',
     difficulty: 'Débutant',
     equipment: 'Machine à adduction',
-    description: 'Exercice pour renforcer les muscles adducteurs de la cuisse.'
+    description: 'Exercice pour renforcer les muscles adducteurs de la cuisse.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '17',
@@ -151,7 +202,10 @@ export const exercises: Exercise[] = [
     muscle: 'adducteurs',
     difficulty: 'Intermédiaire',
     equipment: 'Haltères',
-    description: 'Exercice qui sollicite les adducteurs en plus des quadriceps.'
+    description: 'Exercice qui sollicite les adducteurs en plus des quadriceps.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '18',
@@ -159,7 +213,10 @@ export const exercises: Exercise[] = [
     muscle: 'adducteurs',
     difficulty: 'Intermédiaire',
     equipment: 'Barre ou haltères',
-    description: 'Variante du squat avec les pieds écartés qui cible davantage les adducteurs.'
+    description: 'Variante du squat avec les pieds écartés qui cible davantage les adducteurs.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Biceps
@@ -169,7 +226,10 @@ export const exercises: Exercise[] = [
     muscle: 'biceps',
     difficulty: 'Débutant',
     equipment: 'Haltères ou barre',
-    description: 'Exercice de base pour développer les biceps.'
+    description: 'Exercice de base pour développer les biceps.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '20',
@@ -177,7 +237,10 @@ export const exercises: Exercise[] = [
     muscle: 'biceps',
     difficulty: 'Débutant',
     equipment: 'Haltères',
-    description: 'Variante du curl qui cible davantage le biceps brachial.'
+    description: 'Variante du curl qui cible davantage le biceps brachial.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '21',
@@ -185,7 +248,10 @@ export const exercises: Exercise[] = [
     muscle: 'biceps',
     difficulty: 'Débutant',
     equipment: 'Haltère',
-    description: 'Exercice d\'isolation pour les biceps en position assise.'
+    description: 'Exercice d\'isolation pour les biceps en position assise.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '22',
@@ -193,7 +259,10 @@ export const exercises: Exercise[] = [
     muscle: 'biceps',
     difficulty: 'Débutant',
     equipment: 'Barre EZ',
-    description: 'Exercice pour les biceps utilisant une barre EZ pour un meilleur confort.'
+    description: 'Exercice pour les biceps utilisant une barre EZ pour un meilleur confort.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Épaules
@@ -203,7 +272,10 @@ export const exercises: Exercise[] = [
     muscle: 'epaules',
     difficulty: 'Intermédiaire',
     equipment: 'Barre ou haltères',
-    description: 'Exercice pour développer les épaules en position debout.'
+    description: 'Exercice pour développer les épaules en position debout.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '24',
@@ -211,7 +283,10 @@ export const exercises: Exercise[] = [
     muscle: 'epaules',
     difficulty: 'Débutant',
     equipment: 'Haltères',
-    description: 'Exercice d\'isolation pour les deltoïdes latéraux.'
+    description: 'Exercice d\'isolation pour les deltoïdes latéraux.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '25',
@@ -219,7 +294,10 @@ export const exercises: Exercise[] = [
     muscle: 'epaules',
     difficulty: 'Débutant',
     equipment: 'Haltères ou barre',
-    description: 'Exercice pour cibler les deltoïdes antérieurs.'
+    description: 'Exercice pour cibler les deltoïdes antérieurs.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '26',
@@ -227,7 +305,10 @@ export const exercises: Exercise[] = [
     muscle: 'epaules',
     difficulty: 'Débutant',
     equipment: 'Câble',
-    description: 'Exercice pour les deltoïdes postérieurs et la santé des épaules.'
+    description: 'Exercice pour les deltoïdes postérieurs et la santé des épaules.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Fessiers
@@ -237,7 +318,10 @@ export const exercises: Exercise[] = [
     muscle: 'fessiers',
     difficulty: 'Intermédiaire',
     equipment: 'Barre et banc',
-    description: 'Exercice ciblé pour les fessiers en position couchée.'
+    description: 'Exercice ciblé pour les fessiers en position couchée.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '28',
@@ -245,7 +329,10 @@ export const exercises: Exercise[] = [
     muscle: 'fessiers',
     difficulty: 'Intermédiaire',
     equipment: 'Haltères',
-    description: 'Exercice unilatéral qui sollicite fortement les fessiers.'
+    description: 'Exercice unilatéral qui sollicite fortement les fessiers.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '29',
@@ -253,7 +340,10 @@ export const exercises: Exercise[] = [
     muscle: 'fessiers',
     difficulty: 'Débutant',
     equipment: 'Machine à extensions de hanche',
-    description: 'Exercice d\'isolation pour les fessiers sur machine.'
+    description: 'Exercice d\'isolation pour les fessiers sur machine.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '30',
@@ -261,7 +351,10 @@ export const exercises: Exercise[] = [
     muscle: 'fessiers',
     difficulty: 'Débutant',
     equipment: 'Aucun ou bande élastique',
-    description: 'Exercice de base pour renforcer les fessiers au poids du corps.'
+    description: 'Exercice de base pour renforcer les fessiers au poids du corps.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Abdominaux
@@ -271,7 +364,10 @@ export const exercises: Exercise[] = [
     muscle: 'abdos',
     difficulty: 'Débutant',
     equipment: 'Aucun',
-    description: 'Exercice de base pour les abdominaux.'
+    description: 'Exercice de base pour les abdominaux.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '32',
@@ -279,7 +375,10 @@ export const exercises: Exercise[] = [
     muscle: 'abdos',
     difficulty: 'Débutant',
     equipment: 'Aucun',
-    description: 'Exercice isométrique pour renforcer les abdominaux et le core.'
+    description: 'Exercice isométrique pour renforcer les abdominaux et le core.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '33',
@@ -287,7 +386,10 @@ export const exercises: Exercise[] = [
     muscle: 'abdos',
     difficulty: 'Intermédiaire',
     equipment: 'Barre de traction ou banc',
-    description: 'Exercice pour les abdominaux inférieurs.'
+    description: 'Exercice pour les abdominaux inférieurs.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '34',
@@ -295,7 +397,10 @@ export const exercises: Exercise[] = [
     muscle: 'abdos',
     difficulty: 'Avancé',
     equipment: 'Roue abdominale',
-    description: 'Exercice avancé pour renforcer les abdominaux et le core.'
+    description: 'Exercice avancé pour renforcer les abdominaux et le core.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Dos
@@ -305,7 +410,10 @@ export const exercises: Exercise[] = [
     muscle: 'dos',
     difficulty: 'Avancé',
     equipment: 'Barre de traction',
-    description: 'Exercice complet pour le dos.'
+    description: 'Exercice complet pour le dos.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '36',
@@ -313,7 +421,10 @@ export const exercises: Exercise[] = [
     muscle: 'dos',
     difficulty: 'Intermédiaire',
     equipment: 'Barre',
-    description: 'Exercice pour développer l\'épaisseur du dos.'
+    description: 'Exercice pour développer l\'épaisseur du dos.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '37',
@@ -321,7 +432,10 @@ export const exercises: Exercise[] = [
     muscle: 'dos',
     difficulty: 'Intermédiaire',
     equipment: 'Haltère et banc',
-    description: 'Exercice unilatéral pour le dos qui permet une plus grande amplitude de mouvement.'
+    description: 'Exercice unilatéral pour le dos qui permet une plus grande amplitude de mouvement.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '38',
@@ -329,7 +443,10 @@ export const exercises: Exercise[] = [
     muscle: 'dos',
     difficulty: 'Débutant',
     equipment: 'Machine à poulie haute',
-    description: 'Exercice pour développer la largeur du dos.'
+    description: 'Exercice pour développer la largeur du dos.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Trapèzes
@@ -339,7 +456,10 @@ export const exercises: Exercise[] = [
     muscle: 'trapezes',
     difficulty: 'Débutant',
     equipment: 'Haltères ou barre',
-    description: 'Exercice pour développer les trapèzes.'
+    description: 'Exercice pour développer les trapèzes.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '40',
@@ -347,7 +467,10 @@ export const exercises: Exercise[] = [
     muscle: 'trapezes',
     difficulty: 'Intermédiaire',
     equipment: 'Barre',
-    description: 'Variante du haussement d\'épaules avec une barre.'
+    description: 'Variante du haussement d\'épaules avec une barre.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '41',
@@ -355,7 +478,10 @@ export const exercises: Exercise[] = [
     muscle: 'trapezes',
     difficulty: 'Débutant',
     equipment: 'Câble',
-    description: 'Exercice pour les trapèzes moyens et inférieurs.'
+    description: 'Exercice pour les trapèzes moyens et inférieurs.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Lombaires
@@ -365,7 +491,10 @@ export const exercises: Exercise[] = [
     muscle: 'lombaires',
     difficulty: 'Débutant',
     equipment: 'Machine à extensions du dos',
-    description: 'Exercice pour renforcer les muscles lombaires.'
+    description: 'Exercice pour renforcer les muscles lombaires.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '43',
@@ -373,7 +502,10 @@ export const exercises: Exercise[] = [
     muscle: 'lombaires',
     difficulty: 'Intermédiaire',
     equipment: 'Barre',
-    description: 'Exercice pour renforcer les muscles du bas du dos.'
+    description: 'Exercice pour renforcer les muscles du bas du dos.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '44',
@@ -381,7 +513,10 @@ export const exercises: Exercise[] = [
     muscle: 'lombaires',
     difficulty: 'Débutant',
     equipment: 'Aucun',
-    description: 'Exercice au poids du corps pour renforcer les muscles du bas du dos.'
+    description: 'Exercice au poids du corps pour renforcer les muscles du bas du dos.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Triceps
@@ -391,7 +526,10 @@ export const exercises: Exercise[] = [
     muscle: 'triceps',
     difficulty: 'Débutant',
     equipment: 'Câble ou haltère',
-    description: 'Exercice d\'isolation pour les triceps.'
+    description: 'Exercice d\'isolation pour les triceps.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '46',
@@ -399,7 +537,10 @@ export const exercises: Exercise[] = [
     muscle: 'triceps',
     difficulty: 'Intermédiaire',
     equipment: 'Barres parallèles ou banc',
-    description: 'Exercice au poids du corps pour les triceps.'
+    description: 'Exercice au poids du corps pour les triceps.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '47',
@@ -407,7 +548,10 @@ export const exercises: Exercise[] = [
     muscle: 'triceps',
     difficulty: 'Débutant',
     equipment: 'Câble',
-    description: 'Exercice pour les triceps utilisant une poulie haute.'
+    description: 'Exercice pour les triceps utilisant une poulie haute.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '48',
@@ -415,7 +559,10 @@ export const exercises: Exercise[] = [
     muscle: 'triceps',
     difficulty: 'Débutant',
     equipment: 'Haltère',
-    description: 'Exercice d\'isolation pour les triceps avec un haltère.'
+    description: 'Exercice d\'isolation pour les triceps avec un haltère.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Obliques
@@ -425,7 +572,10 @@ export const exercises: Exercise[] = [
     muscle: 'obliques',
     difficulty: 'Intermédiaire',
     equipment: 'Haltère ou poids',
-    description: 'Exercice pour les muscles obliques de l\'abdomen.'
+    description: 'Exercice pour les muscles obliques de l\'abdomen.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '50',
@@ -433,7 +583,10 @@ export const exercises: Exercise[] = [
     muscle: 'obliques',
     difficulty: 'Débutant',
     equipment: 'Aucun',
-    description: 'Exercice pour cibler les obliques.'
+    description: 'Exercice pour cibler les obliques.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '51',
@@ -441,7 +594,10 @@ export const exercises: Exercise[] = [
     muscle: 'obliques',
     difficulty: 'Intermédiaire',
     equipment: 'Câble ou haltère',
-    description: 'Exercice de rotation pour les obliques.'
+    description: 'Exercice de rotation pour les obliques.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
 
   // Avant-bras
@@ -451,7 +607,10 @@ export const exercises: Exercise[] = [
     muscle: 'avant-bras',
     difficulty: 'Débutant',
     equipment: 'Barre ou haltères',
-    description: 'Exercice pour renforcer les avant-bras.'
+    description: 'Exercice pour renforcer les avant-bras.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '53',
@@ -459,7 +618,10 @@ export const exercises: Exercise[] = [
     muscle: 'avant-bras',
     difficulty: 'Débutant',
     equipment: 'Barre ou haltères',
-    description: 'Exercice pour les extenseurs des avant-bras.'
+    description: 'Exercice pour les extenseurs des avant-bras.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   },
   {
     id: '54',
@@ -467,6 +629,9 @@ export const exercises: Exercise[] = [
     muscle: 'avant-bras',
     difficulty: 'Intermédiaire',
     equipment: 'Barre EZ ou haltères',
-    description: 'Exercice qui sollicite fortement les avant-bras.'
+    description: 'Exercice qui sollicite fortement les avant-bras.',
+    sets: 3,
+    reps: 10,
+    restTime: 60
   }
 ]; 
