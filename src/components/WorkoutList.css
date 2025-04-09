@@ -1,0 +1,150 @@
+.workout-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.workout-list h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.no-workouts {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.workout-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.workout-item {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-left: 4px solid #3498db;
+}
+
+.workout-header {
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.workout-date {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.workout-exercises {
+  padding: 15px 20px;
+}
+
+.workout-exercises h4 {
+  margin: 0 0 10px 0;
+  color: #34495e;
+  font-size: 1rem;
+}
+
+.workout-exercises ul {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.exercise-summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.exercise-summary:last-child {
+  border-bottom: none;
+}
+
+.exercise-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.exercise-details {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.workout-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
+}
+
+.view-workout-btn,
+.delete-workout-btn {
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.view-workout-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.view-workout-btn:hover {
+  background-color: #2980b9;
+}
+
+.delete-workout-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.delete-workout-btn:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .workout-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .exercise-summary {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .workout-actions {
+    flex-direction: column;
+  }
+  
+  .view-workout-btn,
+  .delete-workout-btn {
+    width: 100%;
+  }
+} 
