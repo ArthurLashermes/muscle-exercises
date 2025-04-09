@@ -1,0 +1,38 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build React app
+        run: |
+          npm run build
+
+      - name: Set up Firebase CLI
+        uses: wzieba/Firebase-CLI-action@v2
+        with:
+          firebase_token: ${{ secrets.FIREBASE_AUTH_TOKEN }}
+
+      - name: Deploy to Firebase Hosting
+        run: |
+          firebase deploy --only hosting --token ${{ secrets.FIREBASE_AUTH_TOKEN }}
