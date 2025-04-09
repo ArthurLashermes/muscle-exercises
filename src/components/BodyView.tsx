@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { exercises, Exercise } from '../data/exercises';
-import { Workout } from '../types/workout';
-import WorkoutBuilder from './WorkoutBuilder';
 import './BodyView.css';
 
 const BodyView: React.FC = () => {
   const [selectedMuscle, setSelectedMuscle] = useState<string | null>(null);
   const [showPopup, setShowPopup] = useState(false);
-  const [showWorkoutBuilder, setShowWorkoutBuilder] = useState(false);
-  const [workouts, setWorkouts] = useState<Workout[]>([]);
   const svgRef = useRef<SVGSVGElement>(null);
 
   const handleMuscleClick = useCallback((muscleId: string) => {
@@ -64,11 +60,6 @@ const BodyView: React.FC = () => {
     }
   };
 
-  const handleSaveWorkout = (workout: Workout) => {
-    setWorkouts([...workouts, workout]);
-    setShowWorkoutBuilder(false);
-  };
-
   const filteredExercises = selectedMuscle
     ? exercises.filter((exercise: Exercise) => exercise.muscle === selectedMuscle)
     : [];
@@ -92,12 +83,6 @@ const BodyView: React.FC = () => {
               <button className="close-button" onClick={handleClosePopup}>×</button>
             </div>
             <div className="popup-content">
-              <button 
-                className="create-workout-btn"
-                onClick={() => setShowWorkoutBuilder(true)}
-              >
-                Créer une nouvelle séance
-              </button>
               <ul>
                 {filteredExercises.map((exercise: Exercise) => (
                   <li key={exercise.id}>
@@ -113,16 +98,6 @@ const BodyView: React.FC = () => {
                 ))}
               </ul>
             </div>
-          </div>
-        )}
-
-        {showWorkoutBuilder && (
-          <div className="workout-builder-modal">
-            <WorkoutBuilder
-              exercises={exercises}
-              onSave={handleSaveWorkout}
-              onCancel={() => setShowWorkoutBuilder(false)}
-            />
           </div>
         )}
       </div>
