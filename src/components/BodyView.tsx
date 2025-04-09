@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { exercises, Exercise } from '../data/exercises';
 import { Workout } from '../types/workout';
 import WorkoutBuilder from './WorkoutBuilder';
@@ -10,6 +10,23 @@ const BodyView: React.FC = () => {
   const [showWorkoutBuilder, setShowWorkoutBuilder] = useState(false);
   const [workouts, setWorkouts] = useState<Workout[]>([]);
   const svgRef = useRef<SVGSVGElement>(null);
+
+  const handleMuscleClick = useCallback((muscleId: string) => {
+    setSelectedMuscle(muscleId === selectedMuscle ? null : muscleId);
+    setShowPopup(true);
+    
+    // Mettre à jour les classes CSS pour le style de sélection
+    if (svgRef.current) {
+      const allMuscles = svgRef.current.querySelectorAll('.muscle');
+      allMuscles.forEach(muscle => {
+        if (muscle.id === muscleId) {
+          muscle.classList.toggle('selected');
+        } else {
+          muscle.classList.remove('selected');
+        }
+      });
+    }
+  }, [selectedMuscle]);
 
   useEffect(() => {
     // Charger le SVG externe
@@ -32,24 +49,7 @@ const BodyView: React.FC = () => {
         }
       })
       .catch(error => console.error('Erreur lors du chargement du SVG:', error));
-  }, []);
-
-  const handleMuscleClick = (muscleId: string) => {
-    setSelectedMuscle(muscleId === selectedMuscle ? null : muscleId);
-    setShowPopup(true);
-    
-    // Mettre à jour les classes CSS pour le style de sélection
-    if (svgRef.current) {
-      const allMuscles = svgRef.current.querySelectorAll('.muscle');
-      allMuscles.forEach(muscle => {
-        if (muscle.id === muscleId) {
-          muscle.classList.toggle('selected');
-        } else {
-          muscle.classList.remove('selected');
-        }
-      });
-    }
-  };
+  }, [handleMuscleClick]);
 
   const handleClosePopup = () => {
     setShowPopup(false);
