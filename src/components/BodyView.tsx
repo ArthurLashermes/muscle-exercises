@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import * as React from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { exercises, Exercise } from '../data/exercises';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
