@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
+import { getPerformance, FirebasePerformance } from "firebase/performance";
 
 // Configuration Firebase
 const firebaseConfig = {
@@ -32,7 +33,19 @@ const initAnalytics = async () => {
   }
 };
 
-// Appeler l'initialisation
-initAnalytics();
+// Initialiser Performance Monitoring de manière sécurisée
+let performance: FirebasePerformance | null = null;
+const initPerformance = () => {
+  try {
+    performance = getPerformance(app);
+    console.log("Firebase Performance Monitoring initialisé avec succès");
+  } catch (error) {
+    console.warn("Erreur lors de l'initialisation de Firebase Performance Monitoring:", error);
+  }
+};
 
-export { app, analytics }; 
+// Appeler les initialisations
+initAnalytics();
+initPerformance();
+
+export { app, analytics, performance }; 
