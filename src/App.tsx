@@ -1,24 +1,27 @@
-import React, { useEffect } from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import Navigation from './components/Navigation';
 import BodyView from './components/BodyView';
-import { measurePageLoad, measureFirstInputDelay } from './performance';
+import './App.css';
 
 function App() {
-  useEffect(() => {
-    // Mesurer le temps de chargement de la page
-    measurePageLoad('home');
-    
-    // Mesurer le délai de première entrée (FID)
-    measureFirstInputDelay();
-  }, []);
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <BodyView />;
+      case 'programs':
+        return <div>Toto - Page des programmes</div>;
+      default:
+        return <BodyView />;
+    }
+  };
 
   return (
     <div className="App">
-      <header className="app-header">
-        <h1>Guide des Exercices Musculaires</h1>
-      </header>
-      <main className="app-main">
-        <BodyView />
+      <Navigation onNavigate={setCurrentPage} />
+      <main className="main-content">
+        {renderPage()}
       </main>
     </div>
   );
