@@ -13,7 +13,11 @@ interface WorkoutExercise extends Exercise {
   restTime: number;
 }
 
-const BodyView: React.FC = () => {
+interface BodyViewProps {
+  isHomePage?: boolean;
+}
+
+const BodyView: React.FC<BodyViewProps> = ({ isHomePage = true }) => {
   const [selectedMuscle, setSelectedMuscle] = useState<string | null>(null);
   const [showPopup, setShowPopup] = useState(false);
   const [workoutList, setWorkoutList] = useState<WorkoutExercise[]>([]);
@@ -30,8 +34,11 @@ const BodyView: React.FC = () => {
   const workoutNameInputRef = useRef<HTMLInputElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const pdfRef = useRef<HTMLDivElement>(null);
+  const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
 
   const handleMuscleClick = useCallback((muscleId: string) => {
+    if (!isHomePage) return;
+    
     setSelectedMuscle(muscleId === selectedMuscle ? null : muscleId);
     setShowPopup(true);
     
@@ -46,7 +53,7 @@ const BodyView: React.FC = () => {
         }
       });
     }
-  }, [selectedMuscle]);
+  }, [selectedMuscle, isHomePage]);
 
   useEffect(() => {
     // Charger le SVG externe
@@ -222,32 +229,32 @@ const BodyView: React.FC = () => {
           </svg>
         </div>
 
-        {showPopup && selectedMuscle && (
-              <ExercisePopup
-                selectedMuscle={selectedMuscle}
-                filteredExercises={filteredExercises}
-                workoutList={workoutList}
-                workoutName={workoutName}
-                showExerciseForm={showExerciseForm}
-                selectedExercise={selectedExercise}
-                exerciseDetails={exerciseDetails}
-                editingIndex={editingIndex}
-                isEditingWorkoutName={isEditingWorkoutName}
-                workoutNameInputRef={workoutNameInputRef}
-                onClose={handleClosePopup}
-                onExerciseClick={handleExerciseClick}
-                onInputChange={handleInputChange}
-                onWorkoutNameChange={handleWorkoutNameChange}
-                onWorkoutNameKeyDown={handleWorkoutNameKeyDown}
-                onWorkoutNameSubmit={handleWorkoutNameSubmit}
-                onEditExercise={handleEditExercise}
-                onRemoveFromWorkout={handleRemoveFromWorkout}
-                onAddToWorkout={handleAddToWorkout}
-                onGeneratePDF={handleGeneratePDF}
-                setShowExerciseForm={setShowExerciseForm}
-                setIsEditingWorkoutName={setIsEditingWorkoutName}
-              />
-            )}
+        {isHomePage && showPopup && selectedMuscle && (
+          <ExercisePopup
+            selectedMuscle={selectedMuscle}
+            filteredExercises={filteredExercises}
+            workoutList={workoutList}
+            workoutName={workoutName}
+            showExerciseForm={showExerciseForm}
+            selectedExercise={selectedExercise}
+            exerciseDetails={exerciseDetails}
+            editingIndex={editingIndex}
+            isEditingWorkoutName={isEditingWorkoutName}
+            workoutNameInputRef={workoutNameInputRef}
+            onClose={handleClosePopup}
+            onExerciseClick={handleExerciseClick}
+            onInputChange={handleInputChange}
+            onWorkoutNameChange={handleWorkoutNameChange}
+            onWorkoutNameKeyDown={handleWorkoutNameKeyDown}
+            onWorkoutNameSubmit={handleWorkoutNameSubmit}
+            onEditExercise={handleEditExercise}
+            onRemoveFromWorkout={handleRemoveFromWorkout}
+            onAddToWorkout={handleAddToWorkout}
+            onGeneratePDF={handleGeneratePDF}
+            setShowExerciseForm={setShowExerciseForm}
+            setIsEditingWorkoutName={setIsEditingWorkoutName}
+          />
+        )}
       </div>
       
       {/* Conteneur PDF */}

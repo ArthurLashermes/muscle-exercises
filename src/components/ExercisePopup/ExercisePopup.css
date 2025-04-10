@@ -1,0 +1,225 @@
+.exercises-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f9fa;
+}
+
+.popup-header-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.popup-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 5px;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+.workout-name-container {
+  margin-bottom: 20px;
+}
+
+.workout-name-form {
+  display: flex;
+  gap: 10px;
+}
+
+.workout-name-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.workout-name-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.workout-name-display h3 {
+  margin: 0;
+  color: #333;
+}
+
+.edit-name-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.workout-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.generate-pdf-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.generate-pdf-button:hover {
+  color: #333;
+}
+
+.generate-pdf-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.exercises-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exercise-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.exercise-item:hover {
+  background-color: #f5f5f5;
+}
+
+.exercise-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cancel-button {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.save-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+.workout-list {
+  margin-top: 20px;
+}
+
+.workout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.workout-item-details {
+  flex: 1;
+}
+
+.workout-item-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.workout-item-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 1rem;
+}
+
+.workout-item-actions button:hover {
+  color: #333;
+}

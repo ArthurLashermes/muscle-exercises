@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from './components/Navigation';
 import BodyView from './components/BodyView';
+import Programs from './components/Programs';
 import './App.css';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       case 'home':
         return <BodyView />;
       case 'programs':
-        return <div>Toto - Page des programmes</div>;
+        return <Programs />;
       default:
         return <BodyView />;
     }
