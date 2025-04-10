@@ -15,3 +15,17 @@ npm start
 ```
 
 L'application sera accessible à l'adresse [http://localhost:3000](http://localhost:3000).
+
+## Tests
+
+### Tests E2E avec Playwright
+
+```bash
+npx playwright test
+```
+
+### Tests unitaires avec Vitest
+
+```bash
+npx vitest run
+```
