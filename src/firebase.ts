@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, isSupported } from "firebase/analytics";
 
 // Configuration Firebase
 const firebaseConfig = {
@@ -14,6 +14,25 @@ const firebaseConfig = {
 
 // Initialiser Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// Initialiser Analytics de manière sécurisée
+let analytics = null;
+const initAnalytics = async () => {
+  try {
+    // Vérifier si Analytics est supporté dans l'environnement actuel
+    const analyticsSupported = await isSupported();
+    if (analyticsSupported) {
+      analytics = getAnalytics(app);
+      console.log("Firebase Analytics initialisé avec succès");
+    } else {
+      console.log("Firebase Analytics n'est pas supporté dans cet environnement");
+    }
+  } catch (error) {
+    console.warn("Erreur lors de l'initialisation de Firebase Analytics:", error);
+  }
+};
+
+// Appeler l'initialisation
+initAnalytics();
 
 export { app, analytics }; 
