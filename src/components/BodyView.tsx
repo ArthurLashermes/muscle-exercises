@@ -15,9 +15,10 @@ interface WorkoutExercise extends Exercise {
 
 interface BodyViewProps {
   isHomePage?: boolean;
+  highlightedMuscle?: string | null;
 }
 
-const BodyView: React.FC<BodyViewProps> = ({ isHomePage = true }) => {
+const BodyView: React.FC<BodyViewProps> = ({ isHomePage = true, highlightedMuscle = null }) => {
   const [selectedMuscle, setSelectedMuscle] = useState<string | null>(null);
   const [showPopup, setShowPopup] = useState(false);
   const [workoutList, setWorkoutList] = useState<WorkoutExercise[]>([]);
@@ -84,6 +85,19 @@ const BodyView: React.FC<BodyViewProps> = ({ isHomePage = true }) => {
       workoutNameInputRef.current.focus();
     }
   }, [isEditingWorkoutName]);
+
+  useEffect(() => {
+    if (svgRef.current) {
+      const allMuscles = svgRef.current.querySelectorAll('.muscle');
+      allMuscles.forEach(muscle => {
+        if (highlightedMuscle && muscle.id === highlightedMuscle) {
+          muscle.classList.add('selected');
+        } else {
+          muscle.classList.remove('selected');
+        }
+      });
+    }
+  }, [highlightedMuscle]);
 
   const handleClosePopup = () => {
     setShowPopup(false);
