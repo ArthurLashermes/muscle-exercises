@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    ignore:
+      - dependency-name: "react"
+        versions: ["19.x"]
+      - dependency-name: "react-dom"
+        versions: ["19.x"]
+      - dependency-name: "react-scripts"
+        versions: ["4.x"]
+      - dependency-name: "typescript"
+        versions: ["5.x"]
+      - dependency-name: "@testing-library/react"
+        versions: ["14.x", "15.x"]
+    labels:
+      - "dependencies"
+      - "npm"
+    reviewers:
+      - "ArthurLashermes"
+    assignees:
+      - "ArthurLashermes"
