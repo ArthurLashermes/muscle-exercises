@@ -1,13 +1,15 @@
 .programs-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: calc(100vh - 60px);
+  background-color: #f0f2f5;
 }
 
 .program-content {
   display: flex;
   width: 100%;
-  gap: 20px;
+  height: 100%;
 }
 
 .body-view-container {
@@ -15,9 +17,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   padding: 20px;
-  margin-left: 50px;
-  transform: scale(0.8);
+  background-color: #f0f2f5;
+}
+
+.body-view-container svg {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 900px;
+  background: none;
 }
 
 .program-menu {

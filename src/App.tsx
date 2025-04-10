@@ -1,31 +1,48 @@
 import React, { useState } from 'react';
-import Navigation from './components/Navigation';
+import './App.css';
 import BodyView from './components/BodyView';
 import Programs from './components/Programs';
-import './App.css';
 
-function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<'wiki' | 'programs'>('wiki');
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'home':
-        return <BodyView />;
+      case 'wiki':
+        return <BodyView isHomePage={true} />;
       case 'programs':
         return <Programs />;
       default:
-        return <BodyView />;
+        return <BodyView isHomePage={true} />;
     }
   };
 
   return (
-    <div className="App">
-      <Navigation onNavigate={setCurrentPage} />
-      <main className="main-content">
+    <div className="app">
+      <nav className="nav-menu">
+        <div className="nav-left">
+          <img src="/logo.png" alt="Logo" className="nav-logo" />
+        </div>
+        <div className="nav-right">
+          <button
+            className={`nav-button ${currentPage === 'wiki' ? 'active' : ''}`}
+            onClick={() => setCurrentPage('wiki')}
+          >
+            Wiki
+          </button>
+          <button
+            className={`nav-button ${currentPage === 'programs' ? 'active' : ''}`}
+            onClick={() => setCurrentPage('programs')}
+          >
+            Programmes
+          </button>
+        </div>
+      </nav>
+      <main>
         {renderPage()}
       </main>
     </div>
   );
-}
+};
 
 export default App;
