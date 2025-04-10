@@ -96,6 +96,15 @@ const Programs: React.FC = () => {
     }
   };
 
+  const handleProgramClick = (program: Program) => {
+    if (selectedProgram?.id === program.id) {
+      setSelectedProgram(null);
+      setExpandedSections({ push: false, pull: false, leg: false });
+    } else {
+      setSelectedProgram(program);
+    }
+  };
+
   return (
     <div className="programs-container">
       <div className="program-content">
@@ -109,9 +118,10 @@ const Programs: React.FC = () => {
               <button
                 key={program.id}
                 className={`program-button ${selectedProgram?.id === program.id ? 'active' : ''}`}
-                onClick={() => setSelectedProgram(program)}
+                onClick={() => handleProgramClick(program)}
               >
                 {program.name}
+                <span className={`program-arrow ${selectedProgram?.id === program.id ? 'expanded' : ''}`}>▼</span>
               </button>
             ))}
           </div>

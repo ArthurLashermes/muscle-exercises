@@ -136,6 +136,9 @@
   width: 100%;
   text-align: left;
   margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .program-button:hover {
@@ -145,4 +148,12 @@
 .program-button.active {
   background-color: #0056b3;
   font-weight: bold;
+}
+
+.program-arrow {
+  transition: transform 0.3s ease;
+}
+
+.program-arrow.expanded {
+  transform: rotate(180deg);
 } 
