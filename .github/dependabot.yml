@@ -9,24 +9,20 @@ updates:
       prefix: "chore"
       include: "scope"
     ignore:
-      # Ignorer les versions spécifiques de React pour éviter les problèmes de compatibilité
       - dependency-name: "react"
         versions: ["19.x"]
       - dependency-name: "react-dom"
         versions: ["19.x"]
-      # Ignorer les versions spécifiques de react-scripts pour éviter les problèmes de compatibilité
       - dependency-name: "react-scripts"
         versions: ["4.x"]
-      # Ignorer les versions spécifiques de TypeScript pour éviter les problèmes de compatibilité
       - dependency-name: "typescript"
         versions: ["5.x"]
-      # Ignorer les versions spécifiques de @testing-library/react pour éviter les problèmes de compatibilité
       - dependency-name: "@testing-library/react"
         versions: ["14.x", "15.x"]
     labels:
       - "dependencies"
       - "npm"
     reviewers:
-      - "maintainers"
+      - "ArthurLashermes"
     assignees:
-      - "maintainers"
+      - "ArthurLashermes"
