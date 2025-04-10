@@ -4,6 +4,7 @@ import { exercises, Exercise } from '../data/exercises';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import './BodyView.css';
+import ExercisePopup from './ExercisePopup/ExercisePopup';
 
 // Interface pour les exercices dans la liste d'entraînement
 interface WorkoutExercise extends Exercise {
@@ -222,154 +223,31 @@ const BodyView: React.FC = () => {
         </div>
 
         {showPopup && selectedMuscle && (
-          <div className="exercises-popup">
-            <div className="popup-header">
-              <div className="popup-header-content">
-                <img src="/logo.png" alt="Logo" className="popup-logo" />
-                <h2>Exercices pour {selectedMuscle}</h2>
-              </div>
-              <button className="close-button" onClick={handleClosePopup}>×</button>
-            </div>
-            <div className="popup-content">
-              {!showExerciseForm ? (
-                <>
-                  <div className="workout-name-container">
-                    {isEditingWorkoutName ? (
-                      <form onSubmit={handleWorkoutNameSubmit} className="workout-name-form">
-                        <input
-                          ref={workoutNameInputRef}
-                          type="text"
-                          value={workoutName}
-                          onChange={handleWorkoutNameChange}
-                          onBlur={() => setIsEditingWorkoutName(false)}
-                          onKeyDown={handleWorkoutNameKeyDown}
-                          className="workout-name-input"
-                          placeholder="Nom de l'entraînement"
-                        />
-                      </form>
-                    ) : (
-                      <div className="workout-name-display" onClick={() => setIsEditingWorkoutName(true)}>
-                        <h3>{workoutName}</h3>
-                        <button className="edit-name-button">✎</button>
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="workout-actions">
-                    <button 
-                      className="generate-pdf-button"
-                      onClick={handleGeneratePDF}
-                      disabled={workoutList.length === 0}
-                      title="Générer PDF"
-                    >
-                      📋
-                    </button>
-                  </div>
-                  
-                  {workoutList.length > 0 ? (
-                    <>
-                      <ul className="workout-list">
-                        {workoutList.map((exercise, index) => (
-                          <li key={`${exercise.id}-${index}`} className="workout-item">
-                            <div className="workout-item-header">
-                              <h4>{exercise.name}</h4>
-                              <div className="workout-item-actions">
-                                <button 
-                                  className="edit-button" 
-                                  onClick={() => handleEditExercise(index)}
-                                >
-                                  ✎
-                                </button>
-                                <button 
-                                  className="remove-button" 
-                                  onClick={() => handleRemoveFromWorkout(index)}
-                                >
-                                  ×
-                                </button>
-                              </div>
-                            </div>
-                            <div className="workout-details">
-                              <span>{exercise.sets} séries</span>
-                              <span>{exercise.reps} répétitions</span>
-                              <span>{exercise.restTime} sec de repos</span>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  ) : (
-                    <p className="empty-workout">Aucun exercice dans votre entraînement</p>
-                  )}
-                  
-                  <h3>Exercices disponibles</h3>
-                  <ul>
-                    {filteredExercises.map((exercise: Exercise) => (
-                      <li key={exercise.id} onClick={() => handleExerciseClick(exercise)}>
-                        <h3>{exercise.name}</h3>
-                        <p>{exercise.description}</p>
-                        <span className="difficulty">{exercise.difficulty}</span>
-                        {exercise.equipment && (
-                          <div className="equipment">
-                            <strong>Équipement :</strong> {exercise.equipment}
-                          </div>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <div className="exercise-form">
-                  <h3>{editingIndex !== null ? 'Modifier l\'exercice' : 'Ajouter à l\'entraînement'}</h3>
-                  <div className="form-group">
-                    <label>Exercice :</label>
-                    <p className="selected-exercise">{selectedExercise?.name}</p>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="sets">Séries :</label>
-                    <input 
-                      type="number" 
-                      id="sets" 
-                      name="sets" 
-                      value={exerciseDetails.sets} 
-                      onChange={handleInputChange}
-                      min="1"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="reps">Répétitions :</label>
-                    <input 
-                      type="number" 
-                      id="reps" 
-                      name="reps" 
-                      value={exerciseDetails.reps} 
-                      onChange={handleInputChange}
-                      min="1"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="restTime">Temps de repos (secondes) :</label>
-                    <input 
-                      type="number" 
-                      id="restTime" 
-                      name="restTime" 
-                      value={exerciseDetails.restTime} 
-                      onChange={handleInputChange}
-                      min="0"
-                    />
-                  </div>
-                  <div className="form-actions">
-                    <button className="cancel-button" onClick={() => setShowExerciseForm(false)}>
-                      Annuler
-                    </button>
-                    <button className="add-button" onClick={handleAddToWorkout}>
-                      {editingIndex !== null ? 'Mettre à jour' : 'Ajouter à l\'entraînement'}
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
+              <ExercisePopup
+                selectedMuscle={selectedMuscle}
+                filteredExercises={filteredExercises}
+                workoutList={workoutList}
+                workoutName={workoutName}
+                showExerciseForm={showExerciseForm}
+                selectedExercise={selectedExercise}
+                exerciseDetails={exerciseDetails}
+                editingIndex={editingIndex}
+                isEditingWorkoutName={isEditingWorkoutName}
+                workoutNameInputRef={workoutNameInputRef}
+                onClose={handleClosePopup}
+                onExerciseClick={handleExerciseClick}
+                onInputChange={handleInputChange}
+                onWorkoutNameChange={handleWorkoutNameChange}
+                onWorkoutNameKeyDown={handleWorkoutNameKeyDown}
+                onWorkoutNameSubmit={handleWorkoutNameSubmit}
+                onEditExercise={handleEditExercise}
+                onRemoveFromWorkout={handleRemoveFromWorkout}
+                onAddToWorkout={handleAddToWorkout}
+                onGeneratePDF={handleGeneratePDF}
+                setShowExerciseForm={setShowExerciseForm}
+                setIsEditingWorkoutName={setIsEditingWorkoutName}
+              />
+            )}
       </div>
       
       {/* Conteneur PDF */}
