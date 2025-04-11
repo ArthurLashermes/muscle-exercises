@@ -23,6 +23,11 @@ const App: React.FC = () => {
         <div className="nav-left">
           <img src="/logo.png" alt="Logo" className="nav-logo" />
         </div>
+
+        <div className="nav-center">
+        <h1 className="nav-title">Guide des Exercices Musculaires</h1>
+        </div>
+
         <div className="nav-right">
           <button
             className={`nav-button ${currentPage === 'wiki' ? 'active' : ''}`}
