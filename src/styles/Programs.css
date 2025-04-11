@@ -123,3 +123,30 @@
     transform: translateY(0);
   }
 }
+
+.exercise-title {
+  cursor: pointer;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.exercise-title:hover {
+  text-decoration: underline;
+}
+
+.exercise-details {
+  background-color: #f9f9f9;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-left: 3px solid #007bff;
+  border-radius: 4px;
+  color: #333;
+  font-size: 0.9rem;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
