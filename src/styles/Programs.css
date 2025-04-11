@@ -1,0 +1,125 @@
+/* Layout principal */
+.programs-container {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+}
+
+.program-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.body-view-container {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: calc(100vh - 60px); /* prend toute la hauteur visible moins la navbar */
+  overflow: auto;
+}
+
+/* Menu programmes (droite) */
+.program-menu {
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.program-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program-item {
+  margin-bottom: 16px;
+}
+
+/* Bouton de sélection d’un programme */
+.program-button {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.program-button:hover {
+  background-color: #0056b3;
+}
+
+.program-button.active {
+  background-color: #004a9f;
+}
+
+/* Détails du programme sélectionné */
+.program-details {
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+/* Section (Push / Pull / Legs etc.) */
+.program-section {
+  margin-bottom: 24px;
+}
+
+.program-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Liste d'exercices */
+.exercise-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.exercise-item {
+  padding: 6px 12px;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.exercise-item:hover {
+  background-color: #f2f2f2;
+}
+
+.exercise-item:last-child {
+  border-bottom: none;
+}
+
+/* Animation légère */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

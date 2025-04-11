@@ -19,20 +19,56 @@
       ]
     },
     {
-      "id": "quadriceps",
-      "name": "Quadriceps",
+      "id": "triceps",
+      "name": "Triceps",
       "exercises": [
         {
-          "name": "Squat",
-          "description": "Position debout, descendez en fléchissant les genoux tout en gardant le dos droit",
-          "sets": 4,
+          "name": "Dips",
+          "description": "Entre deux barres parallèles, descendez en fléchissant les coudes puis remontez",
+          "sets": 3,
           "reps": 10
         },
         {
-          "name": "Presse à Cuisses",
-          "description": "Assis sur la machine, poussez la charge en extension des jambes",
+          "name": "Extension des Triceps",
+          "description": "Debout ou assis, tendez les bras au-dessus de la tête avec un haltère",
           "sets": 3,
           "reps": 12
+        }
+      ]
+    },
+    {
+      "id": "deltoids",
+      "name": "Épaules",
+      "exercises": [
+        {
+          "name": "Développé Militaire",
+          "description": "Debout ou assis, soulevez la barre ou les haltères au-dessus de la tête",
+          "sets": 4,
+          "reps": 8
+        }
+      ]
+    },
+    {
+      "id": "back",
+      "name": "Dos",
+      "exercises": [
+        {
+          "name": "Tractions",
+          "description": "Suspendu à une barre, tirez votre corps vers le haut",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "name": "Lat Pulldown",
+          "description": "Assis, tirez la barre vers le bas jusqu'à la poitrine",
+          "sets": 3,
+          "reps": 12
+        },
+        {
+          "name": "Rowing Barre",
+          "description": "Penché en avant, tirez la barre vers le ventre",
+          "sets": 4,
+          "reps": 10
         }
       ]
     },
@@ -51,6 +87,48 @@
           "description": "Même mouvement que le curl classique mais avec les paumes face à face",
           "sets": 3,
           "reps": 12
+        }
+      ]
+    },
+    {
+      "id": "quadriceps",
+      "name": "Quadriceps",
+      "exercises": [
+        {
+          "name": "Squat",
+          "description": "Position debout, descendez en fléchissant les genoux tout en gardant le dos droit",
+          "sets": 4,
+          "reps": 10
+        },
+        {
+          "name": "Presse à Cuisses",
+          "description": "Assis sur la machine, poussez la charge en extension des jambes",
+          "sets": 3,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "id": "hamstrings",
+      "name": "Ischio-jambiers",
+      "exercises": [
+        {
+          "name": "Leg Curl",
+          "description": "Allongé sur le ventre, fléchissez les jambes en ramenant les talons vers les fesses",
+          "sets": 3,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "id": "calves",
+      "name": "Mollets",
+      "exercises": [
+        {
+          "name": "Extensions des Mollets Debout",
+          "description": "Debout sur une marche, montez sur la pointe des pieds",
+          "sets": 4,
+          "reps": 15
         }
       ]
     }
