@@ -35,7 +35,6 @@ const BodyView: React.FC<BodyViewProps> = ({ isHomePage = true, highlightedMuscl
   const workoutNameInputRef = useRef<HTMLInputElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const pdfRef = useRef<HTMLDivElement>(null);
-  const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
 
   const handleMuscleClick = useCallback((muscleId: string) => {
     if (!isHomePage) return;
